@@ -1,0 +1,23 @@
+[
+  {
+    "week": 0,
+    "date": "Sat, Aug 24",
+    "opponent": "Texas",
+    "location": "Austin, TX",
+    "result": "L 37-10"
+  },
+  {
+    "week": 1,
+    "date": "Sat, Aug 31",
+    "opponent": "Miami",
+    "location": "Home",
+    "result": "L 21-20"
+  },
+  {
+    "week": 2,
+    "date": "Sat, Sep 7",
+    "opponent": "FCS Southeast",
+    "location": "Home",
+    "result": "W 56-0"
+  }
+]
