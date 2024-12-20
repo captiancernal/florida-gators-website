@@ -1,57 +1,1476 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Swamp Social - Your hub for everything Florida Gators football.">
-  <meta name="keywords" content="Florida Gators, Football, College Sports, SEC, Stats">
-  <meta name="author" content="Your Name">
-  <title>Swamp Social - Florida Gators Football</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <script src="scripts/main.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swamp Social - Florida Gators Football</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="header-container">
-      <img src="images/logo.png" alt="Florida Gators Logo" class="logo">
-      <h1>Swamp Social</h1>
-      <p>Your hub for everything Florida Gators football</p>
-    </div>
-  </header>
+  <header style="position: relative; height: 400px; overflow: hidden; text-align: center;">
 
-  <nav>
-    <a href="#stats">Season Stats</a>
-    <a href="#schedule">Season Schedule</a>
-    <a href="#news">Gator Byte News</a>
-    <a href="#quiz">Quiz</a>
-  </nav>
+    <div style="
+         position: absolute; 
+         top: 0; 
+         left: 0; 
+         width: 100%; 
+         height: 100%; 
+         background: linear-gradient(
+           135deg,
+           #0021a5,   /* Gators Blue */
+           #fa4616,   /* Gators Orange */
+           #ffcc00,   /* Gators Gold */
+           #24a148,   /* Gators Green */
+           #0021a5    /* Gators Blue */
+         ); 
+         background-size: 400% 100%; 
+         animation: diagonalShift 600s linear infinite; 
+         z-index: 0;">
+  </div>
 
-  <main>
-    <section id="stats" class="section">
-      <h2>Season Stats</h2>
-      <p>Player stats will be dynamically loaded here.</p>
-    </section>
+    <img src="assets/images/florida-gators-logotyp-us.png" 
+       alt="Gators Logo" 
+       style="width: 400px; height: auto; filter: drop-shadow(0 0 20px #ffcc00); animation: logoPulse 2s infinite alternate; position: relative; z-index: 1;">
 
-    <section id="schedule" class="section">
-      <h2>Season Schedule</h2>
-      <p>Game schedule will be dynamically loaded here.</p>
-    </section>
+    <div style="
+         position: absolute; 
+         top: 70%; 
+         left: 50%; 
+         transform: translate(-50%, -50%); 
+         text-align: center; 
+         color: white; 
+         text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); 
+         z-index: 2;">
+    <h1 style="
+         font-size: 3.5em; 
+         font-family: 'Bebas Neue', sans-serif; 
+         text-transform: uppercase; 
+         margin: 0;">
+      Swamp Social
+    </h1>
+    <p style="
+         color: #ffcc00; 
+         font-style: italic; 
+         font-size: 1.2em;">
+      Your hub for everything Florida Gators football
+    </p>
+  </div>
+</header>
 
-    <section id="news" class="section">
-      <h2>Gator Byte News</h2>
-      <p>Latest news updates will appear here.</p>
-    </section>
+<nav>
+    <a href="#forum" onclick="showTab('forum')">BREAKING NEWS</a>
+    <a href="#stats" onclick="showTab('stats')">Season Stats</a>
+    <a href="#schedule" onclick="showTab('schedule')">Season Schedule</a>
+    <a href="#news" onclick="showTab('news')">Gator Byte News</a>
+    <a href="#quiz" onclick="showTab('quiz')">Quiz</a>
+    <a href="#highlights" onclick="showTab('highlights')">Highlights</a>
+</nav>
 
-    <section id="quiz" class="section">
-      <h2>Florida Gators Quiz</h2>
-      <p>Interactive quiz will appear here.</p>
-    </section>
-  </main>
+<div id="forum" class="tab-content">
+  <h2>Breaking News</h2>
+  <div id="forum-post-container" class="breaking-news-post">
+      </div>
+  <div class="reply-container">
+    <h3>Replies</h3>
+    <div id="replies"></div>
+    <input type="text" id="reply-input" placeholder="Write a reply as @BrickDupp..." />
+    <button class="reply-btn" onclick="addUserReply()">Reply</button>
+  </div>
+</div>
 
-  <footer>
-    <p>&copy; 2024 Swamp Social. All rights reserved. <strong>Go Gators!</strong></p>
-  </footer>
-  <script src="scripts/main.js" defer></script>
+<div id="stats" class="tab-content">
+    <h2>Season Stats</h2>
+    
+    <h3>Passing</h3>
+    <table class="stats-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Yards</th>
+                <th>Completions</th>
+                <th>Attempts</th>
+                <th>Touchdowns</th>
+                <th>Interceptions</th>
+                <th>Yards/Attempt</th>
+                <th>Longest</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>DJ Lagway</td>
+                <td>QB</td>
+                <td>1,479</td>
+                <td>120</td>
+                <td>210</td>
+                <td>15</td>
+                <td>12</td>
+                <td>7.0</td>
+                <td>38</td>
+            </tr>
+            <tr>
+                <td>Parker Leise</td>
+                <td>QB</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Graham Mertz</td>
+                <td>QB</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Clay Millen</td>
+                <td>QB</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3>Rushing</h3>
+    <table class="stats-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Carries</th>
+                <th>Yards</th>
+                <th>Average</th>
+                <th>Touchdowns</th>
+                <th>Fumbles</th>
+                <th>Longest</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Montrell Johnson Jr.</td>
+                <td>HB</td>
+                <td>85</td>
+                <td>482</td>
+                <td>5.7</td>
+                <td>2</td>
+                <td>0</td>
+                <td>69</td>
+            </tr>
+            <tr>
+                <td>Treyaun Webb</td>
+                <td>HB</td>
+                <td>16</td>
+                <td>124</td>
+                <td>7.8</td>
+                <td>1</td>
+                <td>0</td>
+                <td>38</td>
+            </tr>
+            <tr>
+                <td>DJ Lagway</td>
+                <td>QB</td>
+                <td>25</td>
+                <td>4</td>
+                <td>0.2</td>
+                <td>1</td>
+                <td>4</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>Cam Carroll</td>
+                <td>HB</td>
+                <td>2</td>
+                <td>22</td>
+                <td>11.0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>22</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3>Receiving</h3>
+    <table class="stats-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Receptions</th>
+                <th>Yards</th>
+                <th>Average</th>
+                <th>Touchdowns</th>
+                <th>Longest</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Montrell Johnson Jr.</td>
+                <td>HB</td>
+                <td>34</td>
+                <td>329</td>
+                <td>9.7</td>
+                <td>2</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>Elijah Badger</td>
+                <td>WR</td>
+                <td>21</td>
+                <td>294</td>
+                <td>14.0</td>
+                <td>4</td>
+                <td>35</td>
+              </tr>
+              <tr>
+                <td>Eugene Wilson III</td>
+                <td>WR</td>
+                <td>17</td>
+                <td>276</td>
+                <td>16.2</td>
+                <td>2</td>
+                <td>38</td>
+              </tr>
+              <tr>
+                <td>Arlis Boardingham</td>
+                <td>TE</td>
+                <td>15</td>
+                <td>230</td>
+                <td>15.3</td>
+                <td>3</td>
+                <td>27</td>
+              </tr>
+              <tr>
+                <td>Chimere Dike</td>
+                <td>WR</td>
+                <td>15</td>
+                <td>163</td>
+                <td>10.9</td>
+                <td>2</td>
+                <td>26</td>
+              </tr>
+              <tr>
+                <td>Trayaun Webb</td>
+                <td>HB</td>
+                <td>5</td>
+                <td>75</td>
+                <td>15.0</td>
+                <td>2</td>
+                <td>36</td>
+              </tr>
+              <tr>
+                <td>Hayden Hansen</td>
+		<td>TE</td>
+                <td>4</td>
+                <td>38</td>
+                <td>9.5</td>
+                <td>0</td>
+                <td>19</td>
+              </tr>
+              <tr>
+                <td>Keon Zipperer</td>
+                <td>TE</td>
+                <td>2</td>
+                <td>24</td>
+                <td>12.0</td>
+                <td>0</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>Marcus Burke</td>
+                <td>WR</td>
+                <td>5</td>
+                <td>37</td>
+                <td>7.4</td>
+                <td>0</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>Aidan Mizell</td>
+                <td>WR</td>
+                <td>2</td>
+                <td>13</td>
+                <td>6.5</td>
+                <td>0</td>
+                <td>9</td>
+              </tr>
+            </tbody>
+    </table>
+</div>
 
+<div id="schedule" class="tab-content hidden">
+  <h2>Season Schedule</h2>
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th>Week</th>
+        <th>Date</th>
+        <th>Opponent</th>
+        <th>Location</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0</td>
+        <td>Sat, Aug 24</td>
+        <td><a href="#week-0" class="opponent-link" data-week="0">Texas</a></td>
+        <td>Austin, TX</td>
+        <td>L 37-10</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Sat, Aug 31</td>
+        <td><a href="#week-1" class="opponent-link" data-week="1">Miami</a></td>
+        <td>Home</td>
+        <td>L 21-20</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Sat, Sep 7</td>
+        <td><a href="#week-2" class="opponent-link" data-week="2">FCS Southeast</a></td>
+        <td>Home</td>
+        <td>W 56-0</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Sat, Sep 14</td>
+        <td><a href="#week-3" class="opponent-link" data-week="3">Texas A&M</a></td>
+        <td>College Station, TX</td>
+        <td>L 30-20</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Sat, Sep 21</td>
+        <td><a href="#week-4" class="opponent-link" data-week="4">Vanderbilt</a></td></td>
+        <td>Home</td>
+        <td>W 35-34</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Sat, Sep 28</td>
+        <td>BYE</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Sat, Oct 5</td>
+        <td>BYE</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Sat, Oct 12</td>
+        <td>BYE</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Sat, Oct 19</td>
+        <td>#6 Alabama</td>
+        <td>Home</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Thu, Oct 24</td>
+        <td>Arkansas</td>
+        <td>Fayetteville, AR</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Sat, Nov 2</td>
+        <td>#1 Georgia</td>
+        <td>Home</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Sat, Nov 9</td>
+        <td>#25 Auburn</td>
+        <td>Auburn, AL</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Sat, Nov 16</td>
+        <td>#22 LSU</td>
+        <td>Home</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Sat, Nov 23</td>
+        <td>Ole Miss</td>
+        <td>Home</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Sat, Nov 30</td>
+        <td>#23 Florida State</td>
+        <td>Tallahassee, FL</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Sat, Dec 7</td>
+        <td>BYE</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="week-0" class="tab-content hidden">
+  <h2>Week 0 - Florida Gators Player Stats vs. Texas</h2>
+  <h3>Passing</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Yards</th>
+        <th>TD</th>
+        <th>INT</th>
+        <th>Long</th>
+        <th>Sacks</th>
+        <th>COMP</th>
+        <th>ATT</th>
+        <th>COMP%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>D. Lagway</td>
+        <td>103.2</td>
+        <td>350</td>
+        <td>1</td>
+        <td>3</td>
+        <td>33</td>
+        <td>3</td>
+        <td>27</td>
+        <td>52</td>
+        <td>51%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Rushing</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>CAR</th>
+        <th>Yards</th>
+        <th>AVG</th>
+        <th>TD</th>
+        <th>FUM</th>
+        <th>LONG</th>
+        <th>20+</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>M. Johnson Jr.</td>
+        <td>12</td>
+        <td>57</td>
+        <td>4.8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>25</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>T. Webb</td>
+        <td>1</td>
+        <td>9</td>
+        <td>9.0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>9</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Receiving</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>REC</th>
+        <th>Yards</th>
+        <th>AVG</th>
+        <th>TD</th>
+        <th>RAC</th>
+        <th>LONG</th>
+        <th>DROPS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>M. Johnson Jr.</td>
+        <td>9</td>
+        <td>96</td>
+        <td>10.7</td>
+        <td>0</td>
+        <td>4.0</td>
+        <td>20</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>E. Wilson III</td>
+        <td>6</td>
+        <td>86</td>
+        <td>14.3</td>
+	<td>0</td>
+        <td>6.0</td>
+        <td>33</td>
+        <td>1</td>
+      </tr>
+        <td>A. Boardingham</td>
+        <td>3</td>
+        <td>53</td>
+        <td>17.7</td>
+        <td>0</td>
+        <td>1.7</td>
+        <td>27</td>
+        <td>1</td>
+      </tr>
+        <td>C. Dike</td>
+        <td>4</td>
+        <td>52</td>
+        <td>13.0</td>
+        <td>1</td>
+        <td>2.5</td>
+        <td>26</td>
+        <td>0</td>
+      </tr>
+        <td>E. Badger</td>
+        <td>2</td>
+        <td>31</td>
+        <td>15.5</td>
+        <td>0</td>
+        <td>1.5</td>
+        <td>26</td>
+        <td>0</td>
+      </tr>
+        <td>K. Zippier</td>
+        <td>2</td>
+        <td>24</td>
+        <td>12.0</td>
+        <td>0</td>
+        <td>8.0</td>
+        <td>12</td>
+        <td>1</td>
+      </tr>
+        <td>H. Hansen</td>
+        <td>1</td>
+        <td>8</td>
+        <td>8.0</td>
+        <td>0</td>
+        <td>3.0</td>
+        <td>8</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div id="week-1" class="tab-content hidden">
+  <h2>Week 1 - Florida Gators Player Stats vs. Miami</h2>
+  
+  <h3>Passing</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Yards</th>
+        <th>TD</th>
+        <th>INT</th>
+        <th>Long</th>
+        <th>Sacks</th>
+        <th>COMP</th>
+        <th>ATT</th>
+        <th>COMP%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>D. Lagway</td>
+        <td>115.2</td>
+        <td>359</td>
+        <td>2</td>
+        <td>4</td>
+        <td>35</td>
+        <td>1</td>
+        <td>30</td>
+        <td>51</td>
+        <td>58%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Rushing</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>CAR</th>
+        <th>Yards</th>
+        <th>AVG</th>
+        <th>TD</th>
+        <th>FUM</th>
+        <th>LONG</th>
+        <th>20+</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>M. Johnson Jr.</td>
+        <td>14</td>
+        <td>28</td>
+        <td>2.0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>11</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>T. Webb</td>
+        <td>1</td>
+        <td>10</td>
+        <td>10.0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>10</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>D. Lagway</td>
+        <td>5</td>
+        <td>8</td>
+        <td>1.6</td>
+        <td>1</td>
+        <td>0</td>
+        <td>5</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Receiving</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>REC</th>
+        <th>Yards</th>
+        <th>AVG</th>
+        <th>TD</th>
+        <th>RAC</th>
+        <th>LONG</th>
+        <th>DROPS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>M. Johnson Jr.</td>
+        <td>11</td>
+        <td>122</td>
+        <td>11.1</td>
+        <td>2</td>
+        <td>8.0</td>
+        <td>23</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>E. Badger</td>
+        <td>4</td>
+        <td>81</td>
+        <td>20.3</td>
+        <td>0</td>
+        <td>20.0</td>
+        <td>88</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>C. Dike</td>
+        <td>5</td>
+        <td>65</td>
+        <td>13.0</td>
+        <td>0</td>
+        <td>26.0</td>
+        <td>18</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>A. Boardingham</td>
+        <td>3</td>
+        <td>35</td>
+        <td>11.7</td>
+        <td>0</td>
+        <td>5.0</td>
+        <td>15</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>E. Wilson III</td>
+        <td>2</td>
+        <td>22</td>
+        <td>11.0</td>
+        <td>0</td>
+        <td>1.0</td>
+        <td>12</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>M. Burke</td>
+        <td>3</td>
+        <td>19</td>
+        <td>6.3</td>
+        <td>0</td>
+        <td>2.3</td>
+        <td>11</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>A. Mizel</td>
+        <td>1</td>
+        <td>9</td>
+        <td>9.0</td>
+        <td>0</td>
+        <td>1.0</td>
+        <td>9</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>H. Hansen</td>
+        <td>1</td>
+        <td>6</td>
+        <td>6.0</td>
+        <td>0</td>
+        <td>0.0</td>
+        <td>6</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div id="week-2" class="tab-content hidden">
+  <h2>Week 2 - Florida Gators Player Stats vs. FCS Southeast</h2>
+  
+  <h3>Passing</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Yards</th>
+        <th>TD</th>
+        <th>INT</th>
+        <th>Long</th>
+        <th>Sacks</th>
+        <th>COMP</th>
+        <th>ATT</th>
+        <th>COMP%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>D. Lagway</td>
+        <td>189.5</td>
+        <td>330</td>
+        <td>7</td>
+        <td>1</td>
+        <td>38</td>
+        <td>0</td>
+        <td>27</td>
+        <td>40</td>
+        <td>67%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Rushing</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>CAR</th>
+        <th>Yards</th>
+        <th>AVG</th>
+        <th>TD</th>
+        <th>FUM</th>
+	<th>LONG</th>
+        <th>20+</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>M. Johnson Jr.</td>
+        <td>20</td>
+        <td>134</td>
+        <td>6.7</td>
+        <td>1</td>
+        <td>0</td>
+        <td>34</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>T. Webb</td>
+        <td>8</td>
+        <td>40</td>
+        <td>5.0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>13</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>D. Lagway</td>
+        <td>3</td>
+        <td>34</td>
+        <td>11.3</td>
+        <td>0</td>
+        <td>0</td>
+        <td>18</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>C. Carroll</td>
+        <td>2</td>
+        <td>22</td>
+        <td>11.0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>12</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Receiving</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>REC</th>
+        <th>Yards</th>
+        <th>AVG</th>
+        <th>TD</th>
+        <th>RAC</th>
+        <th>LONG</th>
+        <th>DROPS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>A. Boardingham</td>
+        <td>5</td>
+        <td>80</td>
+        <td>16.0</td>
+        <td>2</td>
+        <td>5.8</td>
+        <td>27</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>E. Wilson III</td>
+        <td>4</td>
+        <td>70</td>
+        <td>17.5</td>
+        <td>1</td>
+        <td>2.3</td>
+        <td>38</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>T. Webb</td>
+        <td>4</td>
+        <td>65</td>
+        <td>16.3</td>
+        <td>1</td>
+        <td>19.0</td>
+        <td>36</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>M. Johnson Jr.</td>
+        <td>5</td>
+        <td>54</td>
+        <td>10.8</td>
+        <td>0</td>
+        <td>11.0</td>
+        <td>18</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>C. Dike</td>
+        <td>3</td>
+        <td>27</td>
+        <td>9.0</td>
+        <td>1</td>
+        <td>3.7</td>
+        <td>14</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>H. Hansen</td>
+        <td>2</td>
+        <td>24</td>
+        <td>12.0</td>
+        <td>0</td>
+        <td>2.0</td>
+        <td>19</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>E. Badger</td>
+        <td>4</td>
+        <td>10</td>
+        <td>2.5</td>
+        <td>2</td>
+        <td>1.5</td>
+        <td>7</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div id="week-3" class="tab-content hidden">
+  <h2>Week 3 - Florida Gators Player Stats vs. Texas A&M</h2>
+  
+  <h3>Passing</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Yards</th>
+        <th>TD</th>
+        <th>INT</th>
+        <th>Long</th>
+        <th>Sacks</th>
+        <th>COMP</th>
+        <th>ATT</th>
+        <th>COMP%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>D. Lagway</td>
+        <td>120.8</td>
+        <td>256</td>
+        <td>2</td>
+        <td>3</td>
+        <td>33</td>
+        <td>0</td>
+        <td>19</td>
+        <td>34</td>
+        <td>55%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Rushing</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>CAR</th>
+        <th>Yards</th>
+        <th>AVG</th>
+        <th>TD</th>
+        <th>FUM</th>
+        <th>LONG</th>
+        <th>20+</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>M. Johnson Jr.</td>
+        <td>19</td>
+        <td>92</td>
+        <td>4.8</td>
+        <td>0</td>
+        <td>0</td>
+        <td>13</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>T. Webb</td>
+        <td>1</td>
+        <td>3</td>
+        <td>3.0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>3</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>D. Lagway</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>C. Carroll</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Receiving</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>REC</th>
+        <th>Yards</th>
+        <th>AVG</th>
+        <th>TD</th>
+        <th>RAC</th>
+        <th>LONG</th>
+        <th>DROPS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>E. Badger</td>
+        <td>7</td>
+        <td>104</td>
+        <td>14.9</td>
+        <td>1</td>
+        <td>4.6</td>
+        <td>33</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>E. Wilson III</td>
+        <td>3</td>
+        <td>64</td>
+        <td>21.3</td>
+        <td>0</td>
+        <td>3.3</td>
+        <td>26</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>A. Boardingham</td>
+        <td>3</td>
+        <td>48</td>
+        <td>16.0</td>
+        <td>0</td>
+        <td>4.3</td>
+        <td>27</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>C. Dike</td>
+        <td>3</td>
+        <td>19</td>
+        <td>6.3</td>
+	<td>0</td>
+        <td>4.3</td>
+        <td>13</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>M. Johnson Jr.</td>
+        <td>2</td>
+        <td>11</td>
+        <td>5.5</td>
+        <td>0</td>
+        <td>8.0</td>
+        <td>10</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>T. Webb</td>
+        <td>1</td>
+        <td>10</td>
+        <td>10.0</td>
+        <td>1</td>
+        <td>5.0</td>
+        <td>10</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>M. Burke</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.0</td>
+        <td>0</td>
+        <td>0.0</td>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div id="week-4" class="tab-content hidden">
+  <h2>Week 4 - Florida Gators Player Stats vs. Vanderbilt</h2>
+  
+  <h3>Passing</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Yards</th>
+        <th>TD</th>
+        <th>INT</th>
+        <th>Long</th>
+        <th>Sacks</th>
+        <th>COMP</th>
+        <th>ATT</th>
+        <th>COMP%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>D. Lagway</td>
+        <td>122.2</td>
+        <td>184</td>
+        <td>3</td>
+        <td>1</td>
+        <td>22</td>
+        <td>1</td>
+        <td>17</td>
+        <td>33</td>
+        <td>51%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Rushing</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>CAR</th>
+        <th>Yards</th>
+        <th>AVG</th>
+        <th>TD</th>
+        <th>FUM</th>
+        <th>LONG</th>
+        <th>20+</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>M. Johnson Jr.</td>
+        <td>20</td>
+        <td>171</td>
+        <td>8.6</td>
+        <td>1</td>
+        <td>0</td>
+        <td>69</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>T. Webb</td>
+        <td>5</td>
+        <td>62</td>
+        <td>12.4</td>
+        <td>1</td>
+        <td>0</td>
+        <td>38</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>D. Lagway</td>
+        <td>6</td>
+        <td>-22</td>
+        <td>-3.6</td>
+        <td>0</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>C. Carroll</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Receiving</h3>
+  <table class="stats-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>REC</th>
+        <th>Yards</th>
+        <th>AVG</th>
+        <th>TD</th>
+        <th>RAC</th>
+        <th>LONG</th>
+        <th>DROPS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>E. Badger</td>
+        <td>4</td>
+        <td>68</td>
+        <td>17.0</td>
+        <td>1</td>
+        <td>4.0</td>
+        <td>21</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>M. Johnson Jr.</td>
+        <td>7</td>
+        <td>46</td>
+        <td>6.6</td>
+        <td>0</td>
+        <td>7.0</td>
+        <td>22</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>E. Wilson III</td>
+        <td>2</td>
+        <td>34</td>
+        <td>17.0</td>
+        <td>1</td>
+        <td>1.5</td>
+        <td>20</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>M. Burke</td>
+        <td>2</td>
+        <td>18</td>
+        <td>9.0</td>
+        <td>0</td>
+        <td>1.0</td>
+        <td>13</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>A. Boardingham</td>
+        <td>1</td>
+        <td>14</td>
+        <td>14.0</td>
+        <td>1</td>
+        <td>0.0</td>
+        <td>14</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>A. Mizel</td>
+        <td>1</td>
+        <td>4</td>
+        <td>4.0</td>
+        <td>0</td>
+        <td>2.0</td>
+        <td>4</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div id="news" class="tab-content hidden">
+  <h2>Gator Byte News Podcast</h2>
+  
+  <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+    <div class="podcast" style="flex: 1 1 calc(50% - 20px); max-width: 400px; text-align: center;">
+      <h3>Week 2: FCS Southeast Recap</h3>
+      <iframe 
+        src="https://player.vimeo.com/video/1030420949" 
+        width="100%" 
+        height="200" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <p>Insights from Coach Brick Dupp on the Gators' Dominant Victory.</p>
+    </div>
+
+    <div class="podcast" style="flex: 1 1 calc(50% - 20px); max-width: 400px; text-align: center;">
+      <h3>Week 3: Texas A&M Recap</h3>
+      <iframe 
+        src="https://player.vimeo.com/video/1032702567" 
+        width="100%" 
+        height="200" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <p>Postgame analysis of the Gators' matchup against Texas A&M.</p>
+    </div>
+
+    <div class="podcast" style="flex: 1 1 calc(50% - 20px); max-width: 400px; text-align: center;">
+          <h3>Week 4: Vanderbilt Recap</h3>
+          <iframe 
+            src="https://player.vimeo.com/video/1034579886" 
+            width="100%" 
+            height="200" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+          <p>Postgame analysis of the Gators' matchup against Vanderbilt</p>
+        </div>
+  </div>
+</div>
+
+<div id="quiz" class="tab-content hidden">
+  <h2>Florida Gators Football Quiz</h2>
+  <div id="quiz-container">
+      </div>
+</div>
+
+<div id="highlights" class="tab-content hidden">
+  <h2>Game Highlights</h2>
+  <div class="highlights-container">
+    
+    <div class="highlight">
+      <h3>Week 1: Florida vs. Miami - Offensive Highlights</h3>
+      <iframe 
+        src="https://player.vimeo.com/video/1031344419" 
+        width
+	width="560" 
+        height="315" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <p>Relive the thrilling offensive highlights from the Florida vs. Miami game in Week 1!</p>
+    </div>
+
+    <div class="highlight">
+      <h3>Week 1: Florida vs. Miami - Defensive Highlights</h3>
+      <iframe 
+        src="https://player.vimeo.com/video/1031344757" 
+        width="560" 
+        height="315" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <p>Check out the defensive dominance of the Gators in their Week 1 matchup against Miami.</p>
+    </div>
+
+    <div class="highlight">
+      <h3>Week 2: Florida vs. FCS Southeast</h3>
+      <iframe 
+        src="https://player.vimeo.com/video/1031322438" 
+        width="560" 
+        height="315" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <p>A dominant performance by the Gators. Relive the best plays from Week 2!</p>
+    </div>
+
+    <div class="highlight">
+      <h3>Week 3: Florida vs. Texas A&M</h3>
+      <iframe 
+        src="https://player.vimeo.com/video/1032705734" 
+        width="560" 
+        height="315" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <p>DJ Lagway costs his team the chance at a victory with a crucial game-sealing Interception.</p>
+    </div>
+
+    <div class="highlight">
+      <h3>Week 4: Florida vs. Vanderbilt</h3>
+      <iframe 
+        src="https://player.vimeo.com/video/1034625515" 
+        width="560" 
+        height="315" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      <p>DJ Lagway Calls game in an incredible come from behind victory against conference rival Vandy!</p>
+    </div>
+
+    <div class="highlight">
+      <h3>Photo Gallery</h3>
+      <div id="photo-gallery">
+        <img src="assets/images/VccTzZQ.png" alt="Highlight 1" class="gallery-img active">
+        <img src="assets/images/EAG29ix.png" alt="Highlight 2" class="gallery-img">
+        <img src="assets/images/RmgzTSB.png" alt="Highlight 3" class="gallery-img">
+        <img src="assets/images/5Ln9yDl.png" alt="Highlight 4" class="gallery-img">
+        <img src="assets/images/7vBtoPx.png" alt="Highlight 5" class="gallery-img">
+        <img src="assets/images/A6PQt5D.png" alt="Highlight 6" class="gallery-img">
+        <img src="assets/images/mCjbKqw.png" alt="Highlight 7" class="gallery-img">
+        <img src="assets/images/uU6Vqt3.png" alt="Highlight 8" class="gallery-img">
+        <img src="assets/images/scQrMyY.png" alt="Highlight 9" class="gallery-img">
+        <img src="assets/images/cSzy2ye.png" alt="Highlight 10" class="gallery-img">
+        <img src="assets/images/6nsLwiY.png" alt="Highlight 11" class="gallery-img">
+        <img src="assets/images/avuVVqR.png" alt="Highlight 12" class="gallery-img">
+        <img src="assets/images/y4EH5G9.png" alt="Highlight 13" class="gallery-img">
+        <img src="assets/images/FTAaMDf.png" alt="Highlight 14" class="gallery-img">
+        
+      </div>
+      <button id="prev-btn" class="gallery-btn">Previous</button>
+      <button id="next-btn" class="gallery-btn">Next</button>
+    </div>
+  </div>
+
+  <img src="assets/images/florida-gators-logotyp-us.png" alt="Floating Gators Logo" style="position: fixed; bottom: 20px; right: 20px; height: 60px; cursor: pointer;" onclick="scrollToTop()">
+
+  <footer>
+    <img src="assets/images/florida-gators-logotyp-us.png" alt="Gators Logo" style="height: 50px; margin: 10px auto;">
+    <p>&copy; 2024 Swamp Social. All rights reserved. <strong>Go Gators!</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
