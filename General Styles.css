@@ -1,503 +1,293 @@
-/* Background and Fonts */
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f9; /* Base white */
-  color: #0021a5; /* Gators blue */
-  background-image: url('assets/images/florida-gators-logotyp-us.png'); /* Subtle texture */
-  background-size: cover;
+/* Base Styles */
+:root {
+  --gator-blue: #0021a5;
+  --gator-orange: #fa4616;
+  --gator-gold: #ffcc00;
+  --white: #ffffff;
+  --light-gray: #f4f4f9;
 }
 
+/* Background and Fonts */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-gray);
+  color: var(--gator-blue);
+}
+
+/* Header Styles */
 header {
-  background: linear-gradient(90deg, #0021a5 50%, #fa4616 50%);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-family: 'Bebas Neue', sans-serif;
-  border-bottom: 5px solid #ffcc00; /* Yellow-Gold accent */
+  background: linear-gradient(90deg, var(--gator-blue) 50%, var(--gator-orange) 50%);
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  border-bottom: 5px solid var(--gator-gold);
 }
 
 header h1 {
-  font-size: 3.5em;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 2px 2px #000; /* Subtle shadow for retro vibe */
+  font-size: 3.5em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px #000;
+  margin: 0;
 }
 
 header p {
-  font-size: 1.5em;
-  font-style: italic;
+  font-size: 1.5em;
+  font-style: italic;
+  margin: 10px 0 0;
 }
 
+/* Navigation */
 nav {
-  display: flex;
-  justify-content: center;
-  background: #0021a5; /* Gators blue */
-  border-bottom: 3px solid #fa4616;
+  display: flex;
+  justify-content: center;
+  background: var(--gator-blue);
+  border-bottom: 3px solid var(--gator-orange);
 }
 
 nav a {
-  color: white;
-  padding: 15px 20px;
-  text-decoration: none;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.2em;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  color: var(--white);
+  padding: 15px 20px;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 }
-
-
 
 nav a:hover {
-  background-color: #fa4616; /* Original orange for all other tabs */
-  transform: scale(1.1); /* Slight zoom on hover */
+  background-color: var(--gator-orange);
+  transform: scale(1.1);
 }
+
 nav a[href="#forum"]:hover {
-  background-color: #FF0000; /* Vibrant red specific to the BREAKING NEWS tab */
+  background-color: #ff0000;
 }
 
-
-
-/* Section Design */
+/* Container Styles */
 .container {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  border: 3px solid #ffcc00; /* Yellow-Gold border */
-  background-image: url('assets/images/florida-gators-logotyp-us.png'); /* Watermark */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 1000px;
-  opacity: 0.1; /* Subtle opacity for watermark effect */
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border: 3px solid var(--gator-gold);
+  position: relative;
 }
 
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('assets/images/florida-gators-logotyp-us.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1000px;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+/* Typography */
 h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.5em;
-  color: #fa4616;
-  text-align: center;
-  margin-bottom: 20px;
-  border-bottom: 5px dashed #ffcc00; /* Yard-line effect */
-  padding-bottom: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5em;
+  color: var(--gator-orange);
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 5px dashed var(--gator-gold);
+  padding-bottom: 10px;
+  position: relative;
 }
 
-/* Table Styling */
-.stats-table, .schedule-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 1em;
-  background: white;
+/* Table Styles */
+.stats-table,
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1em;
+  background: var(--white);
+  position: relative;
 }
 
-.stats-table th, .schedule-table th {
-  background-color: #fa4616;
-  color: white;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.1em;
-  padding: 15px;
-  border: 2px solid #0021a5;
+.stats-table th,
+.schedule-table th {
+  background-color: var(--gator-orange);
+  color: var(--white);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1em;
+  padding: 15px;
+  border: 2px solid var(--gator-blue);
 }
 
-.stats-table td, .schedule-table td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: center;
+.stats-table td,
+.schedule-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
 }
 
 .schedule-table tr:nth-child(even) {
-  background-color: #f4f4f9; /* Alternating rows */
+  background-color: var(--light-gray);
 }
 
 .schedule-table tr:hover {
-  background-color: #fa4616;
-  color: white;
-  cursor: pointer;
+  background-color: var(--gator-orange);
+  color: var(--white);
+  cursor: pointer;
 }
 
-/* Buttons */
+/* Button Styles */
 button {
-  padding: 10px 15px;
-  background: #fa4616;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-family: 'Bebas Neue', sans-serif;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  padding: 10px 15px;
+  background: var(--gator-orange);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-family: 'Bebas Neue', sans-serif;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 button:hover {
-  background: #0021a5;
-  transform: scale(1.1); /* Slight zoom */
+  background: var(--gator-blue);
+  transform: scale(1.1);
 }
 
 /* Footer */
 footer {
-  background: linear-gradient(90deg, #0021a5 50%, #fa4616 50%);
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1em;
-  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--gator-blue) 50%, var(--gator-orange) 50%);
+  color: var(--white);
+  text-align: center;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  letter-spacing: 1px;
 }
 
-/* Subtle Animations and Hover Effects */
-
-/* Keyframes for fade-in animation */
+/* Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* General animation class for dynamic content */
 .animate {
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
-/* Hover effects with smooth scaling */
-button:hover, a:hover {
-  transform: scale(1.1);
-  background-color: #ffcc00; /* Optional hover color for better visibility */
-}
-
-/* Floating logo hover effect */
-.floating-logo:hover {
-  transform: rotate(360deg) scale(1.2);
-  transition: transform 0.5s ease-in-out;
-}
-
-/* Smooth scrolling for the whole page */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Highlight active link in the schedule */
-.opponent-link.active {
-  font-weight: bold;
-  color: #ffcc00; /* Yellow highlight */
-  text-decoration: underline;
-}
-
-/* Breaking News Styling */
+/* Breaking News Styles */
 .breaking-news-post {
-  animation: fadeInBounce 1.5s ease-out;
-  border: 3px solid #ff0000; /* Enhanced vibrant red border for urgency */
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); /* Stronger glow effect for prominence */
-  padding: 20px;
-  margin: 10px auto;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #ffffff 60%, #ffcc00 40%); /* Added gradient for dynamic visual appeal */
-  position: relative;
-  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  margin: 10px auto;
+  border: 3px solid #ff0000;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--white) 60%, var(--gator-gold) 40%);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  animation: fadeInBounce 1.5s ease-out;
+  overflow: hidden;
 }
 
-/* Adding a dynamic "LIVE" tag for breaking news */
 .breaking-news-post::before {
-  content: "LIVE";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  background: #ff0000;
-  color: white;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.2em;
-  padding: 5px 10px;
-  border-radius: 5px;
-  animation: blink 1s infinite alternate; /* Blinking animation for emphasis */
+  content: "LIVE";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: #ff0000;
+  color: var(--white);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  animation: blink 1s infinite alternate;
 }
 
-/* Header Styling */
-.breaking-news-post h3 {
-  color: #fa4616;
-  font-size: 1.8em;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  text-shadow: 1px 1px #ffcc00; /* Added shadow for better visibility */
-}
-
-/* Author and Timestamp Styling */
-.breaking-news-post p
-.author {
-  font-weight: bold;
-  color: #0021a5;
-  margin-bottom: 5px;
-}
-
-.breaking-news-post p.timestamp {
-  font-style: italic;
-  color: #666;
-  animation: fadeHighlight 3s infinite alternate; /* Subtle animation for timestamp to draw attention */
-}
-
-/* Hover Effects */
-.breaking-news-post:hover {
-  transform: scale(1.02); /* Slight zoom on hover for interaction */
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Animation Keyframes */
 @keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
+  from { opacity: 1; }
+  to { opacity: 0.5; }
 }
 
-@keyframes fadeHighlight {
-  0%, 100% {
-    color: #666;
-  }
-  50% {
-    color: #fa4616;
-  }
-}
-
-/* Like and Reply Buttons Styling */
-button.like-btn, button.reply-btn {
-  background-color: #fa4616;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-family: 'Bebas Neue', sans-serif;
-  cursor: pointer;
-}
-
-button.like-btn:hover, button.reply-btn:hover {
-  background-color: #ffcc00;
-}
-
-/* Reply Section Enhancements */
-.reply-container {
-  margin-top: 20px;
-}
-
-.reply {
-  display: flex;
-  align-items: flex-start;
-  margin: 10px 0;
-}
-
-.reply .profile-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-  background-size: cover;
-}
-
-.reply .comment {
-  background: #f4f4f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 10px;
-  max-width: 80%;
-  transition: background 0.3s ease;
-}
-
-.reply-container .reply:hover .comment {
-  background: #e0e0ff;
-}
-
-/* Animate Gradient's Background Position */
-@keyframes diagonalShift {
-      0% {
-        background-position: 0% 50%;
-      }
-      100% {
-        background-position: 100% 50%;
-      }
-    }
-
-    /* Glow Effect for Logo */
-    @keyframes logoPulse {
-      0% {
-        filter: drop-shadow(0 0 15px #ffcc00);
-      }
-      50% {
-        filter: drop-shadow(0 0 40px #fa4616);
-      }
-      100% {
-        filter: drop-shadow(0 0 15px #ffcc00);
-      }
-    }
-.highlights-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.highlight {
-  text-align: center;
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #fa4616;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.highlight h3 {
-  color: #0021a5;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.screenshot-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.highlight-screenshot {
-  width: 150px;
-  height: auto;
-  border: 3px solid #ffcc00;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Style for Image Gallery */
+/* Photo Gallery */
 #photo-gallery {
-  position: relative;
-  max-width: 560px;
-  height: 315px;
-  margin: 0 auto;
-  overflow: hidden;
-  border: 3px solid #fa4616;
-  border-radius: 10px;
+  position: relative;
+  max-width: 560px;
+  height: 315px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 3px solid var(--gator-orange);
+  border-radius: 10px;
 }
 
 .gallery-img {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  object-fit: cover;
 }
 
 .gallery-img.active {
-  left: 0;
-  opacity: 1;
+  left: 0;
+  opacity: 1;
 }
 
-.gallery-btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px; 
-  background-color: #fa4616;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-family: 'Bebas Neue', sans-serif;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.gallery-btn:hover {
-  background-color: #0021a5;
-  transform: scale(1.1);
-}
-
-
-
-/* Quiz Section Styling */
+/* Quiz Styles */
 #quiz-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: linear-gradient(to bottom right, #004085, #f58220); /* Gators' colors */
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  max-width: 600px;
-  margin: 20px auto;
-  color: white;
-  font-family: 'Oswald', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(to bottom right, var(--gator-blue), var(--gator-orange));
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin: 20px auto;
+  color: var(--white);
+  font-family: 'Oswald', sans-serif;
 }
 
-/* Header Styling */
-#quiz-container h3 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  text-transform: uppercase;
+.quiz-option {
+  width: 80%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--gator-blue);
+  background-color: var(--gator-orange);
+  border: 2px solid var(--gator-blue);
+  border-radius: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* Question Styling */
-#quiz-container p {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 20px;
+.quiz-option:hover:not(:disabled) {
+  transform: scale(1.05);
+  background-color: var(--gator-blue);
+  color: var(--gator-orange);
 }
 
-/* Answer Button Styling */
-#quiz-container .quiz-option {
-  display: block;
-  width: 80%;
-  max-width: 400px;
-  margin: 10px auto;
-  padding: 15px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #004085; /* Dark blue */
-  background-color: #f58220; /* Gators' orange */
-  border: 2px solid #004085;
-  border-radius: 8px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
-}
-
-/* Hover and Active States */
-#quiz-container .quiz-option:hover {
-  transform: scale(1.05);
-  background-color: #004085;
-  color: #f58220;
-}
-
-#quiz-container .quiz-option:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* Results Styling */
-#quiz-container div {
-  margin-top: 20px;
-}
-
-#quiz-container button {
-  padding: 12px 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #f58220;
-  background-color: #004085;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#quiz-container button:hover {
-  background-color: #f58220;
-  color: #004085;
-  transform: scale(1.1);
+.quiz-option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
